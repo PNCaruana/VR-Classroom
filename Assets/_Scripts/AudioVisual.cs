@@ -14,20 +14,13 @@ public class AudioVisual : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.Pause();
         
     }
     void Update()
     {
         getSpectrumAudioSource();
         float freq = slider.value;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            audioSource.Pause();
-        }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            audioSource.UnPause();
-        }
         audioSource.pitch = 1 + 2 * freq;
     }
     void getSpectrumAudioSource()
@@ -35,4 +28,16 @@ public class AudioVisual : MonoBehaviour
         audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
     }
 
+public void Pause()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+        else
+        {
+            audioSource.UnPause();
+        }
+        
+    }
 }

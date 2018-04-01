@@ -26,7 +26,7 @@ public class Instantiate512Cubes : MonoBehaviour
             instanceSampleCube.transform.position = Vector3.forward * 100;
             sampleCube[i] = instanceSampleCube;
         }
-        this.transform.position = new Vector3(50, 0, 0);
+        this.transform.position = new Vector3(-100, 0, 400);
         AVobj = source.GetComponent<AudioVisual>();
     }
     void Update()

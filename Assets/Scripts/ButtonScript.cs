@@ -5,13 +5,7 @@ using UnityEngine;
 
 //Script for button clicking at start menu
 public class ButtonScript : MonoBehaviour {
-
-
-
-
     
-
-
 	// Use this for initialization
 	void Start () {
 		
@@ -33,7 +27,7 @@ public class ButtonScript : MonoBehaviour {
 
     public void DeleteCanvas()
     {
-        Destroy(GameObject.Find("Canvas"));
+        Destroy(GameObject.Find("Panel"));
     }
 
 
