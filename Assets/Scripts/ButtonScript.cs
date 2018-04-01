@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Script for button clicking at start menu
 public class ButtonScript : MonoBehaviour {
 
 
-    public GameObject player;
-    public GameObject cam;
-    float v = 10;
+
+
+    
 
 
 	// Use this for initialization
@@ -15,7 +17,24 @@ public class ButtonScript : MonoBehaviour {
 		
 	}
 
-   
+    public void Visual()
+    {
+        DeleteCanvas();
+        //Start Visual fourier
+
+    }
+
+    public void Audio()
+    {
+        DeleteCanvas();
+        //Start Audio fourier
+
+    }
+
+    public void DeleteCanvas()
+    {
+        Destroy(GameObject.Find("Canvas"));
+    }
 
 
 
@@ -23,7 +42,7 @@ public class ButtonScript : MonoBehaviour {
     void Update () {
 
         
-       
+       //
 
 
 

@@ -11,7 +11,7 @@ public class GuiScript : MonoBehaviour {
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 10, 10), "hello");
+        
     }
     // Update is called once per frame
     void Update () {
