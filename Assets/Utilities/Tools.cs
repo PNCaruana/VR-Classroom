@@ -20,6 +20,10 @@ namespace Tools
         {
             return new Complex(x, 0);
         }
+        public static implicit operator Complex(int n)
+        {
+            return new Complex((double)n, 0);
+        }
         public static Complex operator *(Complex c, double d)
         {
             return new Complex(c.real * d, c.imag * d);
@@ -38,9 +42,17 @@ namespace Tools
             return fa;
         }
         // File MUST have an n*m matrix (not jagged)
-        public static Complex[,] FileToMatrix(string filePath)
+        public static Complex[,] FileToMatrix(string fileName)
         {
-            System.IO.StreamReader sr = new System.IO.StreamReader(filePath);
+            //Quick workaround for android
+            TextAsset txt = (TextAsset)Resources.Load(fileName);
+            string filecontent = txt.text;
+            System.IO.MemoryStream stream = new System.IO.MemoryStream();
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(stream);
+            writer.Write(filecontent);
+            writer.Flush();
+            stream.Position = 0;
+            System.IO.StreamReader sr = new System.IO.StreamReader(fileName);
             Debug.Log("Trying to read the file");
             var lines = new List<float[]>();
             int Rows = 0;

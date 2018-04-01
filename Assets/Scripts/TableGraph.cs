@@ -22,7 +22,7 @@ public class TableGraph : MonoBehaviour {
         if (matrix != null)
         {
             cornerPos = new Vector3(transform.position.x - transform.localScale.x * (1f/2 - 1f / (float)matrix.GetLength(0)/2),
-            1f,
+            transform.position.y + transform.localScale.y + 2f,
             transform.position.z - transform.localScale.z * (1f/2 - 1f / (float)matrix.GetLength(1)/2));
             bars = new GameObject[matrix.GetLength(0), matrix.GetLength(1)];
             for (int i = 0; i < matrix.GetLength(0); i++)

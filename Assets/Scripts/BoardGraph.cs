@@ -15,8 +15,8 @@ public class BoardGraph : MonoBehaviour {
     void Start()
     {
         cornerPos = new Vector3(transform.position.x - transform.localScale.x,
-            transform.position.y - transform.localScale.y,
-            transform.position.z - 0.25f);
+            transform.position.y + transform.localScale.y,
+            transform.position.z - 10.25f);
     }
 
     void InitGraph()
@@ -24,8 +24,8 @@ public class BoardGraph : MonoBehaviour {
         if (matrix != null)
         {
             cornerPos = new Vector3(transform.position.x - transform.localScale.x * (1f / 2 - 1f / (float)matrix.GetLength(0) / 2),
-            transform.position.y + 1.5f + transform.localScale.y * (1f / 2 - 1f / (float)matrix.GetLength(1) / 2),
-            transform.position.z - 0.25f);
+            transform.position.y + 25.5f + transform.localScale.y * (1f / 2 - 1f / (float)matrix.GetLength(1) / 2),
+            transform.position.z - 10.25f);
             bars = new GameObject[matrix.GetLength(0), matrix.GetLength(1)];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
