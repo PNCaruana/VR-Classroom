@@ -13,6 +13,7 @@ Features:
   
   License: 
   Copyright (c) 2018, Creative Commons
+  
   Peter Caruana, Daniel Podlovics
   
   Anyone is free to use this repository, though we ask that you give credit by including this agreement in your project.
